@@ -37,7 +37,7 @@ public class BinaryTree {
 				}
 			}
 			else{
-				throw new IllegalArgumentException("Värdet existerar redan i trädet.");
+				throw new IllegalArgumentException("VŠrdet existerar redan i trŠdet.");
 			}
 		}
 		else {
@@ -47,24 +47,87 @@ public class BinaryTree {
 		return null;
 	}
 	
-	public void delete(int data){
-		
-	}
-	
 	public TreeNode find(TreeNode current, int dataToFind){
-		return null;
+		TreeNode currentNode = current;
+		int data = dataToFind;
+		TreeNode result = null;
+		
+		if(currentNode != null) {
+			if(currentNode.getData() == data){
+				result = currentNode;
+			}
+			else if(currentNode.getData() > data) {
+				result = find(currentNode.getLeft(), data);
+			}
+			else{
+				result = find(currentNode.getRight(), data);
+			}
+		}
+		return result;
 	}
 	
 	private void inOrder(TreeNode current){
+		
+	}
 	
+	public void delete(int data){
+		TreeNode newTree = remove(root, data);
+		if(newTree != null){
+			root = newTree;
+		}
 	}
 	
 	private TreeNode remove(TreeNode current, int dataToRemove){
-		return null;
+		int data = dataToRemove;
+		TreeNode result = null;
+		
+		System.out.println("Finding node to remove...");
+		
+		if(current != null) {
+			if(current.getData() == data) {
+				System.out.println("Found node!");
+					TreeNode successor = findSuccessor(current);
+					current.setData(successor.getData());
+			}
+			else if(current.getData() > data) {
+					remove(current.getLeft(), data);
+			}
+			else{
+					remove(current.getRight(), data);
+			}
+		}
+		return current;
 	}
 	
 	private TreeNode findSuccessor(TreeNode current){
-		return null;
+		System.out.println("Finding successor...");
+		TreeNode result = null;
+		if(current.getRight() != null) {
+			TreeNode successor = current.getRight();
+			TreeNode parent = current;
+			
+			while(successor.getLeft() != null) {
+				parent = successor;
+				successor = successor.getLeft();
+			}
+			
+			result = successor;
+			//current.setData(successor.getData());
+			
+			if(successor.getRight() != null) {
+				successor = successor.getRight();
+			}
+			else {
+				parent.setLeft(null);
+				successor = null;
+			}
+		}
+		else if(current.getLeft() != null) {
+			result = current.getLeft();
+		}
+
+		System.out.println("Successor moved!");
+		return result;
 	}
 	
 	public TreeNode getRoot() {
