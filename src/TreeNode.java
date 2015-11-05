@@ -1,5 +1,5 @@
 /**
- * 
+ * Class som representerar en nod i ett binärt sökträd
  * @author Patrik
  *
  */
@@ -9,7 +9,7 @@ public class TreeNode {
 	private TreeNode right;
 	
 	/**
-	 * 
+	 * Init. av värdet för noden
 	 * @param data
 	 */
 	public TreeNode(int data){
@@ -18,7 +18,7 @@ public class TreeNode {
 	
 	/**
 	 * 
-	 * @return
+	 * @return nodens värde
 	 */
 	public int getData() {
 		return data;
@@ -26,7 +26,7 @@ public class TreeNode {
 
 	/**
 	 * 
-	 * @param data
+	 * @param data sätter nodens värde
 	 */
 	public void setData(int data) {
 		this.data = data;
@@ -34,7 +34,7 @@ public class TreeNode {
 
 	/**
 	 * 
-	 * @return
+	 * @return returnerar vänster child nod
 	 */
 	public TreeNode getLeft() {
 		return left;
@@ -42,7 +42,7 @@ public class TreeNode {
 
 	/**
 	 * 
-	 * @param left
+	 * @param left ändrar vänster child nod
 	 */
 	public void setLeft(TreeNode left) {
 		this.left = left;
@@ -50,7 +50,7 @@ public class TreeNode {
 
 	/**
 	 * 
-	 * @return
+	 * @return returnerar höger child nod
 	 */
 	public TreeNode getRight() {
 		return right;
@@ -58,7 +58,7 @@ public class TreeNode {
 
 	/**
 	 * 
-	 * @param right
+	 * @param right ändrar höger child nod
 	 */
 	public void setRight(TreeNode right) {
 		this.right = right;
