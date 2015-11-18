@@ -4,37 +4,31 @@ public class Visualization {
 		//Initierar träd
 		BinaryTree tree = new BinaryTree();
 		//Insättning av diverse värden
-		tree.add(60);
-		tree.add(30);
-		tree.add(20);
-		tree.add(40);
-		tree.add(10);
-		tree.add(50);
-		tree.add(90);
-		tree.add(80);
-		tree.add(70);
-		tree.add(100);
-		tree.add(120);
-		tree.add(35);
-		tree.add(37);
-
+		tree.add(15); tree.add(5); tree.add(3); tree.add(4); tree.add(6); tree.add(61);
+		tree.add(62); tree.add(63); tree.add(25); tree.add(26); tree.add(10); tree.add(8);
+		tree.add(14); tree.add(12); tree.add(11); tree.add(13); tree.add(2); tree.add(3);
+		tree.add(1); tree.add(99); tree.add(101); tree.add(100);
 		
-		//första print efter insättning
 		tree.getRoot().printTree();
+		System.out.println("\n-----------------------------------\n");
 		
-		//bortagning av nod
-		System.out.println("Deleting node...");
-		tree.delete(30);
+		tree.delete(10); 
+		tree.delete(99); 
+		tree.delete(15);
+		tree.delete(100); 
+		tree.delete(13);
+		tree.delete(6);
+		tree.delete(3); 
+		tree.delete(1);	
+		tree.delete(2);	
+		tree.delete(61);
+		tree.delete(62);
+		tree.delete(63); 
 		
-		//print efter borttagning
 		tree.getRoot().printTree();
+		System.out.println("\n-----------------------------------\n");
 		
-		System.out.println("Printing tree values in order...");
 		tree.inOrder(tree.getRoot());
-		
-		TreeNode findResult = tree.find(tree.getRoot(), 10);
-		System.out.println("\n");
-		System.out.println("find result: " + findResult.getData());
 		
 	}
 }

@@ -52,7 +52,9 @@ public class BinaryTree {
 				}
 			}
 			else{
-				throw new IllegalArgumentException("Värdet existerar redan i trädet.");
+				System.out.println("Värdet " + newNode.getData() + " existerar redan i trädet");
+				//throw new IllegalArgumentException("Värdet existerar redan i trädet.");
+				//TODO: USE EXCEPTION...
 			}
 		}
 		else {
@@ -155,7 +157,7 @@ public class BinaryTree {
 			}
 			
 			if(successor.getRight() != null) {
-				if(level < 0) {
+				if(level == 0) {
 					parent.setRight(successor.getRight());
 				} 
 				else {
